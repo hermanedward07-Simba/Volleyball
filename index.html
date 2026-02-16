@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Muheza Volleyball Club</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===============================
+   GLOBAL STYLES
+=================================*/
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f7fa;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+/* ===============================
+   NAVBAR
+=================================*/
+.custom-navbar {
+    position: relative;
+    background-image: url('volleyball.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.custom-navbar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.custom-navbar > * {
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.council-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+/* ===============================
+   HERO SECTION
+=================================*/
+.hero-section {
+    background: linear-gradient(135deg, #4a90e2, #50e3c2);
+    padding: 90px 20px;
+}
+
+.hero-section h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero-section p {
+    font-size: 1.15rem;
+    opacity: 0.95;
+}
+
+/* ===============================
+   DASHBOARD CARDS
+=================================*/
+.dashboard-card {
+    background: #ffffff;
+    padding: 35px 20px;
+    border-radius: 18px;
+    transition: all 0.35s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    cursor: pointer;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.dashboard-card::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, #4a90e2, #50e3c2);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.dashboard-card:hover::after {
+    transform: scaleX(1);
+}
+
+.dashboard-card h6 {
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    color: #2c3e50;
+}
+
+/* ===============================
+   ICON CIRCLE
+=================================*/
+.icon-circle {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 15px auto;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4a90e2, #50e3c2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #ffffff;
+    transition: all 0.35s ease;
+}
+
+.dashboard-card:hover .icon-circle {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 20px rgba(74,144,226,0.4);
+}
+
+/* ===============================
+   FOOTER
+=================================*/
+.site-footer {
+    background: linear-gradient(
+        rgba(80,227,194,0.85),
+        rgba(74,144,226,0.85)
+    );
+    color: #000;
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.site-footer h5 {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.site-footer p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.sponsor-logo {
+    height: 55px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    filter: grayscale(30%);
+}
+
+.sponsor-logo:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+/* ===============================
+   RESPONSIVE IMPROVEMENTS
+=================================*/
+@media (max-width: 992px) {
+    .hero-section h1 {
+        font-size: 2.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-navbar {
+        height: 80px;
+    }
+
+    .hero-section {
+        padding: 60px 15px;
+    }
+
+    .dashboard-card {
+        padding: 25px 15px;
+    }
+
+    .icon-circle {
+        width: 65px;
+        height: 65px;
+        font-size: 1.6rem;
+    }
+
+    .sponsor-logo {
+        height: 45px;
+    }
+}
+    </style>
+</head>
+<body>
+    
+
+<!-- TOP NAVBAR -->
+<nav class="navbar navbar-light px-4 shadow-sm custom-navbar">
+    <div class="d-flex align-items-center">
+        <img src="logo.jpeg" alt="Council Logo" class="logo">
+        <span class="ms-2 fw-bold council-name">Muheza Volleyball</span>
+    </div>
+</nav>
+
+
+<!-- HERO SECTION -->
+<section class="hero-section text-center text-white">
+    <h1>Welcome to Muheza Volleyball Club</h1>
+    <p> Volleyball Family...</p>
+
+   
+</section>
+<!-- DASHBOARD CARDS -->
+<section class="container my-5">
+    <div class="row g-4 text-center">
+
+        <!-- Members Card -->
+        <div class="col-md-3">
+            <a href="members.html" style="text-decoration: none; color: inherit;">
+                <div class="dashboard-card">
+                    <div class="icon-circle"><i class="bi bi-person-fill"></i></div>
+                    <h6>MEMBERS</h6>
+                </div>
+            </a>
+        </div>
+
+        <!-- Updates Card -->
+        <div class="col-md-3">
+            <a href="updates.html" style="text-decoration: none; color: inherit;">
+                <div class="dashboard-card">
+                    <div class="icon-circle"><i class="bi bi-broadcast-pin"></i></div>
+                    <h6>UPDATES</h6>
+                </div>
+            </a>
+        </div>
+
+        <!-- Events Card -->
+        <div class="col-md-3">
+            <a href="events.html" style="text-decoration: none; color: inherit;">
+                <div class="dashboard-card">
+                    <div class="icon-circle"><i class="bi bi-calendar-event"></i></div>
+                    <h6>EVENTS</h6>
+                </div>
+            </a>
+        </div>
+
+               <!-- Gallery -->
+        <div class="col-md-3">
+            <a href="gallery.html" style="text-decoration: none; color: inherit;">
+                <div class="dashboard-card">
+                    <div class="icon-circle"><i class="bi bi-person-fill"></i></div>
+                    <h6>Gallery</h6>
+                </div>
+            </a>
+        </div>
+
+        <!-- About Us Card -->
+        <div class="col-md-3">
+            <a href="about.html" style="text-decoration: none; color: inherit;">
+                <div class="dashboard-card">
+                    <div class="icon-circle"><i class="bi bi-info-circle-fill"></i></div>
+                    <h6>ABOUT US</h6>
+                </div>
+            </a>
+        </div>
+
+         <!-- Contacts -->
+        <div class="col-md-3">
+            <a href="contacts.html" style="text-decoration: none; color: inherit;">
+                <div class="dashboard-card">
+                    <div class="icon-circle"><i class="bi bi-person-fill"></i></div>
+                    <h6>CONTACTS</h6>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer text-center py-5">
+    <div class="container">
+
+        <!-- Sponsors -->
+        <div class="sponsors mb-4">
+            <h5 class="mb-3">Our Sponsors</h5>
+            <div class="d-flex flex-wrap justify-content-center align-items-center gap-4">
+            
+            </div>
+        </div>
+
+        <!-- Footer text -->
+        <p class="mb-0">&copy; 2026 Muheza Volleyball Club. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

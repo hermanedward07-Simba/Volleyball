@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Muheza Volleyball Club</title>
+
+<!-- BOOTSTRAP CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+/* ================= GLOBAL ================= */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f4f7fa;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+a { text-decoration: none; }
+
+/* ================= NAVBAR ================= */
+.navbar {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.back-button {
+    background: linear-gradient(135deg, #4a90e2, #50e3c2);
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    font-size: 0.9rem;
+    border-radius: 30px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+.back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+/* ================= HERO ================= */
+.hero {
+    background: url("https://images.unsplash.com/photo-1607112789362-f9f9b9e42b91?auto=format&fit=crop&w=1650&q=80")
+        center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 160px 20px 110px;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(74,144,226,0.75),
+        rgba(80,227,194,0.75)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 850px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.15rem;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 14px 36px;
+    background: #ffcc00;
+    color: #000;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+/* ================= HIGHLIGHTS ================= */
+.highlights {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 70px 20px;
+    gap: 25px;
+}
+
+.card-highlight {
+    flex: 1 1 260px;
+    background: linear-gradient(135deg, #4a90e2, #50e3c2);
+    color: #fff;
+    padding: 35px 25px;
+    border-radius: 18px;
+    text-align: center;
+    transition: all 0.35s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card-highlight i {
+    font-size: 2.6rem;
+    margin-bottom: 15px;
+}
+
+.card-highlight:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+}
+
+/* ================= STATS ================= */
+.stats {
+    background: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding: 70px 20px;
+    gap: 40px;
+}
+
+.stat-item h2 {
+    font-size: 2.8rem;
+    color: #4a90e2;
+    font-weight: 700;
+}
+
+.stat-item p {
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+/* ================= CLUB LEADERS ================= */
+.club-leaders {
+    background: #f9fafc;
+}
+
+.section-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #4a90e2;
+}
+
+.section-title::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #4a90e2, #50e3c2);
+    display: block;
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+.leader {
+    text-align: center;
+    max-width: 220px;
+}
+
+.leader img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #50e3c2;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.leader-name {
+    margin-top: 15px;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.leader-title {
+    display: inline-block;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #4a90e2, #50e3c2);
+    border-radius: 20px;
+}
+
+/* ================= FOOTER ================= */
+.site-footer {
+    background: linear-gradient(
+        rgba(80,227,194,0.85),
+        rgba(74,144,226,0.85)
+    );
+    color: #000;
+    padding: 60px 20px 40px;
+}
+
+.sponsor-logo {
+    height: 55px;
+    transition: 0.3s ease;
+}
+
+.sponsor-logo:hover {
+    transform: scale(1.1);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.2rem; }
+    .hero p { font-size: 1rem; }
+    .sponsor-logo { height: 45px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Muheza VC</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="members.html">Members</a></li>
+            <li class="nav-item"><a class="nav-link" href="updates.html">Updates</a></li>
+            <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacts.html">Contact</a></li>
+
+            <li class="nav-item ms-lg-3">
+                <button class="back-button" onclick="goBack()">
+                    <i class="bi bi-arrow-left"></i> Back
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+</nav>
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-content">
+    <h1>Muheza Volleyball Club</h1>
+    <p>
+        A club with strong men's and women's teams, passionate supporters,
+        two training courts, and a united family built on respect and excellence.
+    </p>
+    <a href="#join" class="cta-button">Join Us</a>
+</div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="highlights">
+    <div class="card-highlight">
+        <i class="bi bi-people-fill"></i>
+        <h5>Top Players</h5>
+        <p>Strong men's and women's teams built on discipline and unity.</p>
+    </div>
+    <div class="card-highlight">
+        <i class="bi bi-heart-fill"></i>
+        <h5>Our Supporters</h5>
+        <p>Dedicated fans who motivate us in every match.</p>
+    </div>
+    <div class="card-highlight">
+        <i class="bi bi-pin-map-fill"></i>
+        <h5>Our Courts</h5>
+        <p>Two quality training courts meeting volleyball standards.</p>
+    </div>
+    <div class="card-highlight">
+        <i class="bi bi-people"></i>
+        <h5>Our Family</h5>
+        <p>A strong club family built on respect and unity.</p>
+    </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+    <div class="stat-item"><h2>25+</h2><p>Registered Players</p></div>
+    <div class="stat-item"><h2>2</h2><p>Training Courts</p></div>
+    <div class="stat-item"><h2>1000+</h2><p>Dedicated Supporters</p></div>
+</section>
+
+<!-- CLUB LEADERS -->
+<section class="club-leaders py-5">
+<div class="container text-center">
+    <h2 class="mb-5 section-title">Club Leadership</h2>
+
+    <div class="d-flex flex-wrap justify-content-center gap-5">
+        <div class="leader">
+            <img src="mjomb.jpeg">
+            <h5 class="leader-name">Joctane Hezron</h5>
+            <span class="leader-title">Chairperson</span>
+        </div>
+        <div class="leader">
+            <img src="minani.jpeg">
+            <h5 class="leader-name">Pascal Minani</h5>
+            <span class="leader-title">Vice Chairperson</span>
+        </div>
+        <div class="leader">
+            <img src="andrew2.png">
+            <h5 class="leader-name">Andrew Martin</h5>
+            <span class="leader-title">Secretary</span>
+        </div>
+         <div class="leader">
+            <img src="mweta2.png">
+            <h5 class="leader-name">Shemweta Mbuguni</h5>
+            <span class="leader-title">Treasurer</span>
+        </div>
+         <div class="leader">
+            <img src="shabani.jpeg">
+            <h5 class="leader-name">Shabani Said</h5>
+            <span class="leader-title">Media Representative</span>
+        </div>
+          <div class="leader">
+            <img src="Herman.jpeg">
+            <h5 class="leader-name">Herman Edward</h5>
+            <span class="leader-title">Trainer</span>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer text-center">
+<div class="container">
+    <h5 class="mb-3">Our Sponsors</h5>
+    <div class="d-flex flex-wrap justify-content-center gap-4 mb-4">
+        
+    </div>
+    <p>&copy; 2026 Muheza Volleyball Club. All Rights Reserved.</p>
+</div>
+</footer>
+
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
