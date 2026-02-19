@@ -228,6 +228,28 @@ a { text-decoration: none; }
     .hero p { font-size: 1rem; }
     .sponsor-logo { height: 45px; }
 }
+    .instagram-btn {
+    display: inline-flex;         /* allows icon + text */
+    align-items: center;          /* vertically center the icon */
+    gap: 6px;                     /* space between icon and text */
+    padding: 8px 16px;
+    background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF);
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.instagram-btn i {
+    font-size: 16px;              /* icon size */
+}
+
+.instagram-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
 </style>
 </head>
 
@@ -309,6 +331,15 @@ function goBack() {
     <div class="stat-item"><h2>25+</h2><p>Registered Players</p></div>
     <div class="stat-item"><h2>2</h2><p>Training Courts</p></div>
     <div class="stat-item"><h2>1000+</h2><p>Dedicated Supporters</p></div>
+    <!-- Include Font Awesome (for the Instagram icon) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Instagram Button -->
+<a href="https://www.instagram.com/muheza_volleyball_club?igsh=dXk1OWlzNnE5ZDgy&utm_source=qr" 
+   target="_blank" 
+   class="instagram-btn">
+   <i class="fab fa-instagram"></i> Instagram
+</a>
 </section>
 
 <!-- CLUB LEADERS -->
@@ -367,4 +398,5 @@ function goBack() {
 
 </body>
 </html>
+
 
